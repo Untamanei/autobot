@@ -26,8 +26,9 @@ if (!is_null($events['events'])) {
 
             // Get replyToken
             $replyToken = $event['replyToken'];
-
-            switch($event['message']['text']) {
+	    $ans = $event['message']['text'];
+			
+            switch(strtolower($ans)) {
                 
                 case 'tel':
                     $respMessage = '089-5124512';
@@ -43,13 +44,17 @@ if (!is_null($events['events'])) {
                     break;
                 default:
 		    $respMessage = 'อยู่ระหว่างการปรับปรุงระบบ';
+		    $respMessage1 = 'text1';
+		    $respMessage2 = 'text2';
+		    $respMessage3 = 'text3';
+		    $respMessage4 = 'text4';    
                     break;
             }
 
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
 
-            $textMessageBuilder = new TextMessageBuilder($respMessage , 'test');
+            $textMessageBuilder = new TextMessageBuilder($respMessage , $respMessage1 , $respMessage2 , $respMessage3 , $respMessage4);
             $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 		}

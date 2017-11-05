@@ -5,16 +5,6 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV["qkemiHYLq1Go2vU
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV["e60fa284733b2a846a6309e8bc3df90e"]]);
 
 foreach ($events as $event) {
-	// Postback Event
-	if (($event instanceof \LINE\LINEBot\Event\PostbackEvent)) {
-		$logger->info('Postback message has come');
-		continue;
-	}
-	// Location Event
-	if  ($event instanceof LINE\LINEBot\Event\MessageEvent\LocationMessage) {
-		$logger->info("location -> ".$event->getLatitude().",".$event->getLongitude());
-		continue;
-	}
 	// Message Event = TextMessage
 	if (($event instanceof \LINE\LINEBot\Event\MessageEvent\TextMessage)) {
 		$messageText=strtolower(trim($event->getText()));

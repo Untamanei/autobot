@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
        $replyToken = $event['replyToken'];
       
       switch($event['message']['text']) { 
-         case 'tel': $respMessage = '089-5124512'; 
+         case 'tel': $respMessage = '089-5124512' , '1923412'; 
             break; 
          case 'address': $respMessage = '99/451 Muang Nonthaburi'; 
             break; 

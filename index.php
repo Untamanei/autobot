@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
                     $respMessage = '089-2541545';
                     break;
                 case 'help':
-                    $respMessage = 'นายช่างดูแลระบบ 2 ระบบ\n1.PRU\n2.LPG\n-----------------\nWi : work instruction\nEx. Wi PRU\n\nPid = piping and instrument diagram\nEx. Pid PRU\n\nSpec = รายละเอียดอุปกรณ์\nEx. Spec PRU PCV105\n\nStock = ตรวจเช็คจำนวอุปกรณ์\nEx. Stock PRU PCV105\n\nBuy = สั่งซื้ออุปกรณ์\nEx. Buy PRU PCV105\n\nTroubleshooting = ปัญหา\nEx. Troubleshooting PRU';
+                    $respMessage = "นายช่างดูแลระบบ 2 ระบบ\n1.PRU\n2.LPG\n-----------------\nWi : work instruction\nEx. Wi PRU\n\nPid = piping and instrument diagram\nEx. Pid PRU\n\nSpec = รายละเอียดอุปกรณ์\nEx. Spec PRU PCV105\n\nStock = ตรวจเช็คจำนวอุปกรณ์\nEx. Stock PRU PCV105\n\nBuy = สั่งซื้ออุปกรณ์\nEx. Buy PRU PCV105\n\nTroubleshooting = ปัญหา\nEx. Troubleshooting PRU";
                     break;
                 default:
 		    $respMessage = 'พิมพ์ help เพื่อหาคำสั่งของนายช่าง';

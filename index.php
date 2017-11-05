@@ -55,8 +55,7 @@ if (!is_null($events['events'])) {
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
 
-            $textMessageBuilder = new TextMessageBuilder($respMessage , $respMessage1 , $respMessage2 , $respMessage3 , $respMessage4);
-            $textMessageBuilder = new ImageMessageBuilder($originalContentUrl, $previewImageUrl);
+            $textMessageBuilder = new TextMessageBuilder($respMessage , $respMessage1 , $respMessage2 , $respMessage3 , $respMessage4)->add(new ImageMessageBuilder($originalContentUrl, $previewImageUrl));
 			$response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 		}

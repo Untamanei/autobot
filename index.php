@@ -1,24 +1,9 @@
 <?php
 require_once '../vendor/autoload.php';
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Monolog\Handler\FirePHPHandler;
-$logger = new Logger('LineBot');
-$logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
+
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV["qkemiHYLq1Go2vUvCixhJFKeTfxGgxd57LkiruFfPV58idgTkUbL7Tn7HUtluFRI8Q/nAbQdyX+yPeOtQ/GcvQQFH122gT6Lu0eqtci22BQ2/doT8zSakFQ7jLIfeakP0NGR6NLOqMZPM+y71siy6wdB04t89/1O/w1cDnyilFU="]);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV["e60fa284733b2a846a6309e8bc3df90e"]]);
-$signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
-try {
-	$events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
-} catch(\LINE\LINEBot\Exception\InvalidSignatureException $e) {
-	error_log('parseEventRequest failed. InvalidSignatureException => '.var_export($e, true));
-} catch(\LINE\LINEBot\Exception\UnknownEventTypeException $e) {
-	error_log('parseEventRequest failed. UnknownEventTypeException => '.var_export($e, true));
-} catch(\LINE\LINEBot\Exception\UnknownMessageTypeException $e) {
-	error_log('parseEventRequest failed. UnknownMessageTypeException => '.var_export($e, true));
-} catch(\LINE\LINEBot\Exception\InvalidEventRequestException $e) {
-	error_log('parseEventRequest failed. InvalidEventRequestException => '.var_export($e, true));
-}
+
 foreach ($events as $event) {
 	// Postback Event
 	if (($event instanceof \LINE\LINEBot\Event\PostbackEvent)) {

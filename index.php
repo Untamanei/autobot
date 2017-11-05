@@ -19,13 +19,13 @@ if (!is_null($events['events'])) {
        $ask = $event['message']['text'];
        switch(strtolower($ask)) {
                case 'm':
-               $respMessage = 'What sup man. Go away!';
+                  $respMessage = 'What sup man. Go away!';
                break;
-               case 'f': $respMessage
-                   $respMessage = 'Love you lady.';
+               case 'f':
+                  $respMessage = 'Love you lady.';
                break;
                default:
-               $respMessage = 'What is your sex? M or F';
+                  $respMessage = 'What is your sex? M or F';
                break;
        }
        $httpClient = new CurlHTTPClient($channel_token);

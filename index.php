@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
        $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
        
        $textMessageBuilder = new TextMessageBuilder($respMessage);
-       $response = $bot->replyMessage($replyToken, $textMessageBuilder); } } echo "
+       $response = $bot->replyMessage($replyToken, $textMessageBuilder);
        
    }
 }    

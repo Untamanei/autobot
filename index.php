@@ -28,8 +28,7 @@ if (!is_null($events['events'])) {
             $replyToken = $event['replyToken'];
 	    $ans = $event['message']['text'];
 			
-            switch(strtolower($ans)) {
-                
+            switch(strtolower($ans)) {          
                 case 'tel':
                     $respMessage = '089-5124512';
                     break;
@@ -39,15 +38,15 @@ if (!is_null($events['events'])) {
                 case 'boss':
                     $respMessage = '089-2541545';
                     break;
-                case 'idcard':
-                    $respMessage = '5845122451245';
+                case 'help':
+                    $respMessage = 'นายช่างดูแลระบบ 2 ระบบ\n1.PRU\n2.LPG\n-----------------\nWi : work instruction\nEx. Wi PRU\n\nPid = piping and instrument diagram\nEx. Pid PRU\n\nSpec = รายละเอียดอุปกรณ์\nEx. Spec PRU PCV105\n\nStock = ตรวจเช็คจำนวอุปกรณ์\nEx. Stock PRU PCV105\n\nBuy = สั่งซื้ออุปกรณ์\nEx. Buy PRU PCV105\n\nTroubleshooting = ปัญหา\nEx. Troubleshooting PRU';
                     break;
                 default:
-		    $respMessage = 'อยู่ระหว่างการปรับปรุงระบบ';
-		    $respMessage1 = 'text1';
-		    $respMessage2 = 'text2';
-		    $respMessage3 = 'text3';
-		    $respMessage4 = 'text4';    
+		    $respMessage = 'พิมพ์ help เพื่อหาคำสั่งของนายช่าง';
+		    $respMessage1 = 'อยู่ระหว่างการปรับปรุงระบบ';
+		    $respMessage2 = 'อยู่ระหว่างการปรับปรุงระบบ';
+		    $respMessage3 = 'อยู่ระหว่างการปรับปรุงระบบ';
+		    $respMessage4 = 'อยู่ระหว่างการปรับปรุงระบบ';    
                     break;
             }
 

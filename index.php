@@ -8,6 +8,7 @@ require_once('./vendor/autoload.php');
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
 
 $channel_token = 'qkemiHYLq1Go2vUvCixhJFKeTfxGgxd57LkiruFfPV58idgTkUbL7Tn7HUtluFRI8Q/nAbQdyX+yPeOtQ/GcvQQFH122gT6Lu0eqtci22BQ2/doT8zSakFQ7jLIfeakP0NGR6NLOqMZPM+y71siy6wdB04t89/1O/w1cDnyilFU=';
 $channel_secret = 'e60fa284733b2a846a6309e8bc3df90e';
@@ -30,7 +31,8 @@ if (!is_null($events['events'])) {
 			
             switch(strtolower($ans)) {          
                 case 'tel':
-                    $respMessage = '089-5124512';
+                    $originalContentUrl = 'https://cdn.shopify.com/s/files/1/1217/6360/products/Shinkansen_Tokaido_ShinFuji_001_1e44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
+			    $previewImageUrl = 'https://cdn.shopify.com/s/files/1/1217/6360/products/Shinkansen_Tokaido_ShinFuji_001_1e44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
                     break;
                 case 'address':
                     $respMessage = '99/451 Muang Nonthaburi';
@@ -54,7 +56,8 @@ if (!is_null($events['events'])) {
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
 
             $textMessageBuilder = new TextMessageBuilder($respMessage , $respMessage1 , $respMessage2 , $respMessage3 , $respMessage4);
-            $response = $bot->replyMessage($replyToken, $textMessageBuilder);
+            $textMessageBuilder = new ImageMessageBuilder($originalContentUrl, $previewImageUrl);
+			$response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 		}
 	}

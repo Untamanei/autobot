@@ -42,13 +42,14 @@ if (!is_null($events['events'])) {
                     $respMessage = '5845122451245';
                     break;
                 default:
+		    $respMessage = 'อยู่ระหว่างการปรับปรุงระบบ';
                     break;
             }
 
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
 
-            $textMessageBuilder = new TextMessageBuilder($respMessage);
+            $textMessageBuilder = new TextMessageBuilder($respMessage , 'test');
             $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 		}

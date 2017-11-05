@@ -15,19 +15,22 @@ $events = json_decode($content, true);
 
 if (!is_null($events['events'])) {
    foreach ($events['events'] as $event) {
+       if ($event['type'] == 'message' && $event['message']['type'] == 'text')
        $replyToken = $event['replyToken'];
-       $ask = $event['message']['text'];
-       switch(strtolower($ask)) {
-               case 'm':
-                  $respMessage = 'What sup man. Go away!';
-               break;
-               case 'f':
-                  $respMessage = 'Love you lady.';
-               break;
-               default:
-                  $respMessage = 'What is your sex? M or F';
-               break;
-       }
+      
+      switch($event['message']['text']) { 
+         case 'tel': $respMessage = '089-5124512'; 
+            break; 
+         case 'address': $respMessage = '99/451 Muang Nonthaburi'; 
+            break; 
+         case 'boss': $respMessage = '089-2541545'; 
+            break; 
+         case 'idcard': $respMessage = '5845122451245'; 
+            break; 
+         default: 
+            break; 
+      }
+      
        $httpClient = new CurlHTTPClient($channel_token);
        $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
        

@@ -32,7 +32,8 @@ if (!is_null($events['events'])) {
             switch(strtolower($ans)) {          
                 case 'tel':
                     $originalContentUrl = 'https://cdn.shopify.com/s/files/1/1217/6360/products/Shinkansen_Tokaido_ShinFuji_001_1e44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
-			    $previewImageUrl = 'https://cdn.shopify.com/s/files/1/1217/6360/products/Shinkansen_Tokaido_ShinFuji_001_1e44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
+		    $previewImageUrl = 'https://cdn.shopify.com/s/files/1/1217/6360/products/Shinkansen_Tokaido_ShinFuji_001_1e44e709-ea47-41ac-91e4-89b2b5eb193a_grande.jpg?v=1489641827';
+	            $respMessage = new ImageMessageBuilder($originalContentUrl, $previewImageUrl);
                     break;
                 case 'address':
                     $respMessage = '99/451 Muang Nonthaburi';
@@ -55,8 +56,11 @@ if (!is_null($events['events'])) {
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
 
-            $textMessageBuilder = new TextMessageBuilder($respMessage , $respMessage1 , $respMessage2 , $respMessage3 , $respMessage4)->add(new ImageMessageBuilder($originalContentUrl, $previewImageUrl));
-			$response = $bot->replyMessage($replyToken, $textMessageBuilder);
+            $textMessageBuilder = new TextMessageBuilder($respMessage , $respMessage1 , $respMessage2 , $respMessage3 , $respMessage4)
+		    
+	    // ->add(new ImageMessageBuilder($originalContentUrl, $previewImageUrl));
+		    
+	    $response = $bot->replyMessage($replyToken, $textMessageBuilder);
 
 		}
 	}

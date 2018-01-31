@@ -22,16 +22,7 @@ else if($arrJson['events'][0]['message']['text'] == "Wi burner training"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "1.	เสียบ Power Plug\n
-2.	เปิดสวิทซ์ On Breaker , Display Power และ NI Power ที่ Panel\n
-3.	เลือกระบบควบคุมแรงดันเชื้อเพลิงที่ชุด Burner Training Kits ที่วาล์ว 3BV-105 และ 3BV-108\n
-4.	เลือกระบบควบคุมอัตราส่วนระหว่างอากาศกับเชื้อเพลิงที่ชุด Burner Training Kits ที่วาล์ว 3BV-122 และ 3BV-127\n
-5.	เปิดวาล์วเชื้อเพลิง BV-101 และ BV-120\n
-6.	เปิดโปรแกรม LabVIEW\n
-7.	เลือกระบบควบคุมแรงดันเชื้อเพลิงและระบบควบคุมอัตราส่วนระหว่างอากาศกับเชื้อเพลิงที่โปรแกรมตามชุด Burner Training Kits\n
-8.	On Blower และ Solenoid Valve\n
-9.	บิดสวิทซ์ Start ที่ Panel ไปที่ ON\n
-";
+  $arrPostData['messages'][0]['text'] = "1.เสียบ Power Plug\n2.เปิดสวิทซ์ On Breaker , Display Power และ NI Power ที่ Panel\n3.เลือกระบบควบคุมแรงดันเชื้อเพลิงที่ชุด Burner Training Kits ที่วาล์ว 3BV-105 และ 3BV-108\n4.เลือกระบบควบคุมอัตราส่วนระหว่างอากาศกับเชื้อเพลิงที่ชุด Burner Training Kits ที่วาล์ว 3BV-122 และ 3BV-127\n5.เปิดวาล์วเชื้อเพลิง BV-101 และ BV-120\n6.เปิดโปรแกรม LabVIEW\n7.เลือกระบบควบคุมแรงดันเชื้อเพลิงและระบบควบคุมอัตราส่วนระหว่างอากาศกับเชื้อเพลิงที่โปรแกรมตามชุด Burner Training Kits\n8.On Blower และ Solenoid Valve\n9.บิดสวิทซ์ Start ที่ Panel ไปที่ ON\n";
   }
 
   else if($arrJson['events'][0]['message']['text'] == "Wi LPG"){
@@ -53,6 +44,14 @@ else if($arrJson['events'][0]['message']['text'] == "Wi burner training"){
   $arrPostData['messages'][0]['previewImageUrl'] = "https://image.goosiam.com/imgupload/upload43/49FrxSRkmDsj.jpg";
   }
 
+  else if($arrJson['events'][0]['message']['text'] == "Pid burner training"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "image";
+  $arrPostData['messages'][0]['originalContentUrl'] = "https://image.goosiam.com/imgupload/upload55/1xsYtUVMIVS5.jpg";
+  $arrPostData['messages'][0]['previewImageUrl'] = "https://image.goosiam.com/imgupload/upload55/1xsYtUVMIVS5.jpg";
+  }
+
   else if($arrJson['events'][0]['message']['text'] == "Pid LPG"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -61,6 +60,13 @@ else if($arrJson['events'][0]['message']['text'] == "Wi burner training"){
   $arrPostData['messages'][0]['previewImageUrl'] = "https://image.goosiam.com/imgupload/upload43/TS0AptL2oFAU.jpg";
   }
  
+  else if($arrJson['events'][0]['message']['text'] == "Spec burner training BV-120"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+   $arrPostData['messages'][0]['text'] = "Description\n================\nBall Valve\nMaximum Inlet : 5 bar\nTemperature Range : -20...60 oC\n--------------\nInstall date : 01/2017\n--------------\nCallibrate : -";
+  }
+
   else if($arrJson['events'][0]['message']['text'] == "Spec PRU PCV105"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -108,6 +114,13 @@ else if($arrJson['events'][0]['message']['text'] == "Wi burner training"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "1.มีน้ำแข็งเกาะบริเวณ Vaporizing Regulator มาก\n -	ไม่ได้เปิด Heater\n -	อัตราการไหลมากเกินที่กำหนดไว้\n2.ได้กลิ่นแก๊ส\n -	ตรวจสอบรอยรั่วที่ข้อต่อต่าง ๆ\n -	หยุดการ operate ทันที";
+  }
+
+  else if($arrJson['events'][0]['message']['text'] == "Troubleshooting burner training"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "1.Low gas pressure มาก\n -	ตรวจสอบก๊าซในระบบ\n -	ตรวจสอบวาล์วก๊าซ\n2.ได้กลิ่นแก๊ส\n -	ตรวจสอบรอยรั่วที่ข้อต่อต่าง ๆ\n -	หยุดการ operate ทันที";
   }
 
   else if($arrJson['events'][0]['message']['text'] == "Troubleshooting LPG"){

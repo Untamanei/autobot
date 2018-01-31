@@ -18,6 +18,22 @@ if($arrJson['events'][0]['message']['text'] == "Wi PRU"){
   $arrPostData['messages'][0]['text'] = "1.นำสาย Flexible Hose มาต่อเข้ากับหัว Quick Connect\n2.นำสายก๊าซมาต่อเข้ากับหัว Quick Connect ที่นำไปใช้งาน\n3.เปิดวาล์วก่อน Vaporizing Regulator ช้า ๆ เพื่อไม่ให้เกิดความเสียหาย\n4.ปรับแรงดัน High Flow Regulator ตามการใช้งาน\n5.เปิดวาล์วหลัง High Flow Regulator\n6.เปิดสวิทซ์ Heater และ Mass Flow Meter\n7.เปิดวาล์วก๊าซนำไปใช้งาน\n8.เมื่อใช้งานเสร็จปิดวาล์วและ Vent ก๊าซออกระบบให้หมด";
   }
 
+else if($arrJson['events'][0]['message']['text'] == "Wi burner training"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "1.	เสียบ Power Plug\n
+2.	เปิดสวิทซ์ On Breaker , Display Power และ NI Power ที่ Panel\n
+3.	เลือกระบบควบคุมแรงดันเชื้อเพลิงที่ชุด Burner Training Kits ที่วาล์ว 3BV-105 และ 3BV-108\n
+4.	เลือกระบบควบคุมอัตราส่วนระหว่างอากาศกับเชื้อเพลิงที่ชุด Burner Training Kits ที่วาล์ว 3BV-122 และ 3BV-127\n
+5.	เปิดวาล์วเชื้อเพลิง BV-101 และ BV-120\n
+6.	เปิดโปรแกรม LabVIEW\n
+7.	เลือกระบบควบคุมแรงดันเชื้อเพลิงและระบบควบคุมอัตราส่วนระหว่างอากาศกับเชื้อเพลิงที่โปรแกรมตามชุด Burner Training Kits\n
+8.	On Blower และ Solenoid Valve\n
+9.	บิดสวิทซ์ Start ที่ Panel ไปที่ ON\n
+";
+  }
+
   else if($arrJson['events'][0]['message']['text'] == "Wi LPG"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
@@ -105,7 +121,7 @@ if($arrJson['events'][0]['message']['text'] == "Wi PRU"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "นายช่างดูแลระบบ 2 ระบบ\n1.PRU\n2.LPG\n-----------------\nWi : work instruction\nEx. Wi PRU\n\nPid = piping and instrument diagram\nEx. Pid PRU\n\nSpec = รายละเอียดอุปกรณ์\nEx. Spec PRU PCV105\n\nStock = ตรวจเช็คจำนวอุปกรณ์\nEx. Stock PRU PCV105\n\nBuy = สั่งซื้ออุปกรณ์\nEx. Buy PRU PCV105\n\nTroubleshooting = ปัญหา\nEx. Troubleshooting PRU";  
+  $arrPostData['messages'][0]['text'] = "นายช่างดูแลระบบ 2 ระบบ\n1.PRU\n2.burner training\n3.LPG\n-----------------\nWi : work instruction\nEx. Wi PRU\n\nPid = piping and instrument diagram\nEx. Pid PRU\n\nSpec = รายละเอียดอุปกรณ์\nEx. Spec PRU PCV105\n\nStock = ตรวจเช็คจำนวอุปกรณ์\nEx. Stock PRU PCV105\n\nBuy = สั่งซื้ออุปกรณ์\nEx. Buy PRU PCV105\n\nTroubleshooting = ปัญหา\nEx. Troubleshooting PRU";  
   }
 
   else{

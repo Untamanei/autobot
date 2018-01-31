@@ -120,7 +120,7 @@ else if($arrJson['events'][0]['message']['text'] == "Wi burner training"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "1.Low gas pressure มาก\n -	ตรวจสอบก๊าซในระบบ\n -	ตรวจสอบวาล์วก๊าซ\n2.ได้กลิ่นแก๊ส\n -	ตรวจสอบรอยรั่วที่ข้อต่อต่าง ๆ\n -	หยุดการ operate ทันที";
+  $arrPostData['messages'][0]['text'] = "1.Low gas pressure\n -	ตรวจสอบก๊าซในระบบ\n -	ตรวจสอบวาล์วก๊าซ\n2.ได้กลิ่นแก๊ส\n -	ตรวจสอบรอยรั่วที่ข้อต่อต่าง ๆ\n -	หยุดการ operate ทันที";
   }
 
   else if($arrJson['events'][0]['message']['text'] == "Troubleshooting LPG"){

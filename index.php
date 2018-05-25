@@ -15,10 +15,10 @@ if($arrJson['events'][0]['message']['text'] == "Wi Boiler"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "1.เปิดระบบไฟฟ้า\n2.นำสาย Flexible Hose มาต่อเข้ากับหัว Quick Connect\n3.เปิดโปรแกรม LabView เพื่อเปิด Solenoid Valve\4.เปิดระบบปั๊มน้ำ Feed\5.เปิดเครื่อง Boiler\n6.รอ Boiler ทำ Pressure ได้ตามที่ตั้งไว้\n7.เปิดวาล์วทางด้าน Steam เพื่อนำไปใช้งานต่อไป\n";
+  $arrPostData['messages'][0]['text'] = "1.เปิดระบบไฟฟ้า\n2.นำสาย Flexible Hose มาต่อเข้ากับหัว Quick Connect\n3.เปิดโปรแกรม LabView เพื่อเปิด Solenoid Valve\4.เปิดระบบปั๊มน้ำ Feed\5.เปิดเครื่อง Boiler\n6.รอ Boiler ทำ Pressure ได้ตามที่ตั้งไว้\n7.เปิดวาล์วทางด้าน Steam เพื่อนำไปใช้งานต่อไป";
   }
 
-else if($arrJson['events'][0]['message']['text'] == "Pid boiler"){
+else if($arrJson['events'][0]['message']['text'] == "Pid Boiler"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "image";

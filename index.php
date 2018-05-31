@@ -44,27 +44,28 @@ else if($arrJson['events'][0]['message']['text'] == "Buy PSV1131"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "PN :  P289P289160070000L\nBrand : Belgas\nLead Time : 10-12 weeks\nCost : 59,300 Baht\nSupplier : Scada Automation\n\nSaleperson\n-------------\nRanon\nE-mail : ranonsa@gmail.com\nTel : 029495531";
+  $arrPostData['messages'][0]['text'] = "PN :  P289P289160070000L\nBrand : Belgas\nLead Time : 10-12 weeks\nCost : 9,300 Baht\nSupplier : Scada Automation\n\nSaleperson\n-------------\nRanon\nE-mail : ranonsa@gmail.com\nTel : 029495531";
   }
 
 else if($arrJson['events'][0]['message']['text'] == "Troubleshooting PSV1131"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "1.มีก๊าซรั่วไหลตลอดเวลา\n -	 เกิดความผิดปกติของ Diaphragm\n -	Pressure Inlet มากกว่าอุปกรณ์รับได้\n2.อุปกรณ์ไม่ทำงาน\n -	เกิดความผิดปกติของ Diaphragm \n -	หยุดการ operate ทันที";
+  $arrPostData['messages'][0]['text'] = "1.มีก๊าซรั่วไหลตลอดเวลา\n -	เกิดความผิดปกติของ Diaphragm\n -	Pressure Inlet มากกว่าอุปกรณ์รับได้\n2.อุปกรณ์ไม่ทำงาน\n -	เกิดความผิดปกติของ Diaphragm \n -	หยุดการ operate ทันที";
   }
 
 else if($arrJson['events'][0]['message']['text'] == "Manual PSV1131"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "Manual\n\nhttps://www.marshbellofram.com/belgas/files/2012/07/P289_web.pdf";
+  $arrPostData['messages'][0]['text'] = "Manual\n-------------\nhttps://www.marshbellofram.com/belgas/files/2012/07/P289_web.pdf";
   }
+
   else if($arrJson['events'][0]['message']['text'] == "help"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ABDUL 4.0 สามารถช่วยเหลืองานด้านต่าง ๆ ดังนี้\n-----------------\nWi : work instruction\nPid = piping and instrument diagram\nSpec = รายละเอียดอุปกรณ์\nStock = ตรวจเช็คจำนวอุปกรณ์\nBuy = สั่งซื้ออุปกรณ์\nTroubleshooting = ปัญหา\n";  
+  $arrPostData['messages'][0]['text'] = "ABDUL 4.0 สามารถช่วยเหลืองานด้านต่าง ๆ ดังนี้\n-----------------\nWi : work instruction\nPid = piping and instrument diagram\nSpec = รายละเอียดอุปกรณ์\nStock = ตรวจเช็คจำนวอุปกรณ์\nBuy = สั่งซื้ออุปกรณ์\nTroubleshooting = ปัญหา";  
   }
 
   else{

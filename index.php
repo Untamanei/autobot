@@ -26,6 +26,54 @@ else if($arrJson['events'][0]['message']['text'] == "Pid Boiler"){
   $arrPostData['messages'][0]['previewImageUrl'] = "https://image.goosiam.com/imgupload/upload71/UD7JU0BieuuO.jpg";
   }
 
+else if($arrJson['events'][0]['message']['text'] == "Spec PSV1131"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "Description\n================\nPressure Relief Valve\nMaximum Inlet : 50 bar\nSet Presssure 1 bar\n--------------\nInstall date : 01/2017\n--------------\nCallibrate : - ";
+  }
+
+else if($arrJson['events'][0]['message']['text'] == "Stock PSV1131"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "0 ea.";
+  }
+
+else if($arrJson['events'][0]['message']['text'] == "Buy PSV1131"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "PN :  P289P289160070000L\nBrand : Belgas\nLead Time : 10-12 weeks\nCost : 59,300 Baht\nSupplier : Scada Automation\n\nSaleperson\n-------------\nRanon\nE-mail : ranonsa@gmail.com\nTel : 029495531";
+  }
+
+else if($arrJson['events'][0]['message']['text'] == "Troubleshooting PSV1131"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "1.มีก๊าซรั่วไหลตลอดเวลา\n -	 เกิดความผิดปกติของ Diaphragm\n -	Pressure Inlet มากกว่าอุปกรณ์รับได้\n2.อุปกรณ์ไม่ทำงาน\n -	เกิดความผิดปกติของ Diaphragm \n -	หยุดการ operate ทันที";
+  }
+
+else if($arrJson['events'][0]['message']['text'] == "Manual PSV1131"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "Manual\n\nhttps://www.marshbellofram.com/belgas/files/2012/07/P289_web.pdf";
+  }
+  else if($arrJson['events'][0]['message']['text'] == "help"){
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ABDUL 4.0 สามารถช่วยเหลืองานด้านต่าง ๆ ดังนี้\n-----------------\nWi : work instruction\nPid = piping and instrument diagram\nSpec = รายละเอียดอุปกรณ์\nStock = ตรวจเช็คจำนวอุปกรณ์\nBuy = สั่งซื้ออุปกรณ์\nTroubleshooting = ปัญหา\n";  
+  }
+
+  else{
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = "ตรวจสอบตัวสะกด\nตัวพิมพ์เล็กพิมพ์ใหญ่\nพิมพ์ help เพื่อหาคำสั่งของABDUL 4.0";
+}
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
